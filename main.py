@@ -1,5 +1,5 @@
 import streamlit as st
-from palm_text1 import get_qa_chain, create_vector_db
+from palm_text import get_qa_chain, create_vector_db
 from PIL import Image
 from streamlit_chat import message
 from langchain.vectorstores import FAISS

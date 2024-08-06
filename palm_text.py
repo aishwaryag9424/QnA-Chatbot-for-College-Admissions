@@ -15,12 +15,8 @@ from webscrappingnotebook import get_txt
 
 from dotenv import load_dotenv
 load_dotenv()  # take environment variables from .env (especially openai api key)
-
-# Set the default value for the google_api_key environment variable
-os.environ.setdefault("google_api_key", "AIzaSyDs51FtbuJrLx7wvVgZsX_K1UGnq8AL3ok")
-# Now you can use the os.environ dictionary to access the value
+# Use the os.environ dictionary to access the value
 llm = GooglePalm(google_api_key=os.environ["google_api_key"], temperature=0.1)
-#llm = GooglePalm(google_api_key=os.environ["AIzaSyDs51FtbuJrLx7wvVgZsX_K1UGnq8AL3ok"], temperature=0.1)
 # # Initialize instructor embeddings using the Hugging Face model
 instructor_embeddings = HuggingFaceInstructEmbeddings(model_name="hkunlp/instructor-large")
 vectordb_file_path = "faiss_index"
